@@ -1,15 +1,15 @@
-/* 1. Variáveis e Reset */
+/* 1. Variáveis Globais */
 :root {
     --gold: #D4AF37;
     --dark-gold: #B8860B;
     --soft-black: #1A1A1A;
-    --light-gray: #F8F9FA;
+    --white: #ffffff;
 }
 
+/* 2. Configurações Gerais */
 body {
     font-family: 'Inter', sans-serif;
     color: var(--soft-black);
-    background-color: var(--white);
     overflow-x: hidden;
 }
 
@@ -17,68 +17,46 @@ h1, h2, h3 {
     font-family: 'Playfair Display', serif;
 }
 
-/* 2. Hero Section Corrigida */
+/* 3. Hero Section (Banner Corrigido) */
 .hero-section {
     min-height: 80vh;
-    /* Adicione uma imagem real em img/banner-cilios.jpg */
+    /* IMPORTANTE: O caminho deve estar exatamente assim para o GitHub Pages */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                 url('img/banner-cilios.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.2rem;
-    }
-}
-
-/* 3. Navbar Customização */
+/* 4. Navbar Customização */
 .navbar {
     background-color: rgba(26, 26, 26, 0.95) !important;
-    border-bottom: 1px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
 }
 
 .nav-link:hover {
     color: var(--gold) !important;
 }
 
-/* 4. Botão Dourado (Sobrescrevendo o Warning do Bootstrap) */
+/* 5. Botões e Filtros */
 .btn-warning {
     background-color: var(--gold) !important;
     border-color: var(--gold) !important;
     color: #000 !important;
     font-weight: 600;
-    border-radius: 4px;
-    transition: all 0.3s ease;
 }
 
 .btn-warning:hover {
     background-color: var(--dark-gold) !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: 0.3s;
 }
 
-/* 5. Cards de Serviços (Layout Dinâmico) */
-#services-container .card {
-    transition: all 0.3s ease;
-    border: 1px solid #eee !important;
-}
-
-#services-container .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
-    border-color: var(--gold) !important;
-}
-
-/* 6. Filtros de Categoria */
 .filter-btn {
     border-radius: 30px;
-    padding: 6px 20px;
     margin: 5px;
-    border: 1px solid var(--soft-black);
     transition: 0.3s;
 }
 
@@ -88,11 +66,22 @@ h1, h2, h3 {
     color: white;
 }
 
-/* 7. WhatsApp Flutuante (Fixando Z-Index) */
+/* 6. Cards Dinâmicos (ADS Logic) */
+#services-container .card {
+    transition: transform 0.3s;
+    border: 1px solid #eee;
+}
+
+#services-container .card:hover {
+    transform: scale(1.05);
+    border-color: var(--gold);
+}
+
+/* 7. WhatsApp Flutuante */
 .whatsapp-btn {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 30px;
+    right: 30px;
     width: 60px;
     height: 60px;
     background-color: #25d366;
@@ -100,23 +89,20 @@ h1, h2, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Garante que fique acima de tudo */
-    transition: transform 0.3s;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.whatsapp-btn img {
-    width: 32px;
-    height: 32px;
+    z-index: 9999 !important; /* Força ficar acima de tudo */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .whatsapp-btn:hover {
     transform: scale(1.1);
-    color: white;
 }
 
-/* 8. Footer */
-footer {
-    border-top: 1px solid #333;
-    font-size: 0.9rem;
+/* 8. Responsividade */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section {
+        min-height: 60vh;
+    }
 }
