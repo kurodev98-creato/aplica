@@ -1,0 +1,35 @@
+<section id="contato" class="py-5 bg-white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center mb-4">Fale com a Gente</h2>
+                <form action="https://formspree.io/f/xrejzqjw" method="POST" id="contact-form" class="shadow p-4 rounded bg-light">
+                    
+                    <div class="mb-3">
+                        <label for="nome" class="form-label fw-bold">Seu Nome</label>
+                        <input type="text" name="nome" id="nome" class="form-control" placeholder="Ex: Maria Silva" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label fw-bold">E-mail</label>
+                        <input type="email" name="_replyto" id="email" class="form-control" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tel" class="form-label fw-bold">WhatsApp</label>
+                        <input type="tel" name="whatsapp" id="tel" class="form-control" placeholder="(27) 99999-9999" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label fw-bold">Como podemos ajudar?</label>
+                        <textarea name="mensagem" id="mensagem" rows="4" class="form-control" placeholder="Dúvidas ou agendamentos..."></textarea>
+                    </div>
+
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <button type="submit" class="btn btn-warning w-100 text-dark fw-bold py-2">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

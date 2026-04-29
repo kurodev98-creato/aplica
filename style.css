@@ -1,0 +1,122 @@
+/* 1. Variáveis e Reset */
+:root {
+    --gold: #D4AF37;
+    --dark-gold: #B8860B;
+    --soft-black: #1A1A1A;
+    --light-gray: #F8F9FA;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--soft-black);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* 2. Hero Section Corrigida */
+.hero-section {
+    min-height: 80vh;
+    /* Adicione uma imagem real em img/banner-cilios.jpg */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('img/banner-cilios.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* 3. Navbar Customização */
+.navbar {
+    background-color: rgba(26, 26, 26, 0.95) !important;
+    border-bottom: 1px solid var(--gold);
+}
+
+.nav-link:hover {
+    color: var(--gold) !important;
+}
+
+/* 4. Botão Dourado (Sobrescrevendo o Warning do Bootstrap) */
+.btn-warning {
+    background-color: var(--gold) !important;
+    border-color: var(--gold) !important;
+    color: #000 !important;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: var(--dark-gold) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* 5. Cards de Serviços (Layout Dinâmico) */
+#services-container .card {
+    transition: all 0.3s ease;
+    border: 1px solid #eee !important;
+}
+
+#services-container .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+    border-color: var(--gold) !important;
+}
+
+/* 6. Filtros de Categoria */
+.filter-btn {
+    border-radius: 30px;
+    padding: 6px 20px;
+    margin: 5px;
+    border: 1px solid var(--soft-black);
+    transition: 0.3s;
+}
+
+.filter-btn.active {
+    background-color: var(--gold) !important;
+    border-color: var(--gold) !important;
+    color: white;
+}
+
+/* 7. WhatsApp Flutuante (Fixando Z-Index) */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Garante que fique acima de tudo */
+    transition: transform 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.whatsapp-btn img {
+    width: 32px;
+    height: 32px;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+/* 8. Footer */
+footer {
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+}
